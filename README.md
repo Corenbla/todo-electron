@@ -1,24 +1,19 @@
-# toto
+# Todo Electron
 
-## Project setup
-```
-yarn install
-```
+Base de travail d'un Electron tournant avec Vuejs et VueRouter.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Implémentation d'un storage, d'un dialogue main/rendered processes et d'un hot reload.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+Base partie d'un @vue-cli electron-builder.
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Pré-requis
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[https://nodejs.org/en/download/current/](https://nodejs.org/en/download/current/)
+
+[https://yarnpkg.com](https://yarnpkg.com)
+
+## Project startup
+
+```bash
+yarn electron:serve
+```
