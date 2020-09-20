@@ -12,8 +12,14 @@ Base partie d'un @vue-cli electron-builder.
 
 [https://yarnpkg.com](https://yarnpkg.com)
 
-## Project startup
+## Lancer le projet
 
 ```bash
 yarn electron:serve
+```
+
+## Builder le projet
+
+```bash
+yarn electron:build
 ```
