@@ -6,9 +6,8 @@
         <input
           type="checkbox"
           :id="'checkbox' + item.id"
-          :data="list.id"
           v-model="item.done"
-          v-on:change="checkItem(list.id)"
+          v-on:change="checkItem(item.id)"
         />{{ item.title }}
       </li>
     </ul>
