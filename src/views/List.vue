@@ -4,7 +4,8 @@
       <router-link :to="{ name: 'ListDetail', params: { listId: list.id } }">{{
         list.title
       }}</router-link>
-      - Nb items: {{ list.nb_item }}
+      - Nb items: {{ list.nb_item }} - <span v-on:click="delList(list.id)">Del</span> -
+      <span>Edit</span>
     </li>
   </ul>
 </template>
@@ -31,6 +32,25 @@ export default {
 
     const toto = await ipcRenderer.invoke('getStoreValue', 'test');
     console.log(toto);
+  },
+  methods: {
+    async delList(id) {
+      const { restHost } = await ipcRenderer.invoke('getStoreValue', 'conf');
+
+      await axios({
+        method: 'DELETE',
+        url: `${restHost}/list/${id}`,
+      });
+
+      await this.fetchLists();
+    },
+    async fetchLists() {
+      const { restHost } = await ipcRenderer.invoke('getStoreValue', 'conf');
+
+      const getList = await axios({ method: 'GET', url: `${restHost}list` });
+
+      this.lists = getList.data;
+    },
   },
 };
 </script>
